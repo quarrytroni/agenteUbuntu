@@ -1,0 +1,424 @@
+
+
+
+Instalamos desde Software VSCodium
+Cuidado que en ubuntu hay dos fijate en el dev que sea de VSCodium y no de otro
+
+
+
+paru -S vscodium
+
+
+
+Ayuda visual studio code
+
+Ejecutar > Ctrl+May+P "o" F1
+
+Configure display language
+muevete con el cursor del teclado
+
+alternar terminal integrado
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Búsquedas con expresión regular:
+
+Para buscar espacios blancos al final de las lineas
+Ctrl+F "Usar expresion regular" \s$
+otras opciones
+------------------------------------------------
+|  ^ | comienzo de cadena                      |
+------------------------------------------------
+| \s | cualquier carácter de espacio en blanco |
+------------------------------------------------
+| '*'| cero o más repeticiones                 |
+------------------------------------------------
+|  $ | Fin de cadena                           |
+------------------------------------------------
+| \n | nueva línea                             |
+------------------------------------------------
+puedes reemplazar con nada así te quita los espacios
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Configuración inicial
+
+
+Archivo > Preferencias > Configuracion (Ctrl+,)
+Fíjate que hay que configurar por dos:
+Usuario & Área de trabajo
+
+autosave > afterDelay && 1000
+Tab Size > 2
+Render Whitespace > boundary
+Editor: Font Family añadir al principio ('CaskaydiaCove Nerd Font Mono', )
+Editor: Font Ligatures > Editar json -> true
+Editor: Wordwrap > ON
+Editor: bracketPairColorization:enabled true
+Editor › Guides: Bracket Pairs active
+Editor: Cursor Blinking > expand
+Editor: Cursor Smooth Caret Animation > on
+Editor › Minimap: Enabled        // TEST
+Editor › Minimap: Autohide > mouseover
+Mouse Wheel Zoom "Ctrl" > true
+Terminal › Integrated: Mouse Wheel Zoom > true
+Window: Zoom Level 0
+Windows: Title Bar Style > custom
+Windows: Menu Bar Visibility > compact
+
+Quitar ruta de navegación
+
+Para VSCode
+Buscar Telemetry o Crash
+y desactivar
+
+Ctrl+May+P > Theme
+Colores me gusta el que trae, mas que el solarized
+Tambien podemos probar... ver extensiones
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Extensiones:
+
+Anteponer
+@popular
+
+Spanish Language Pack for Visual Studio Code, MS-CEINTL
+
+Project Manager, alefragnani
+Nuevo icono en la barra lateral con todos nuestros proyectos
+
+Draw.io Integration, hediet
+Esta extensión no oficial integra Draw.io en VS Code.
+Abre un enlace a su página y tienes que aceptar cookies.
+
+Draw.io Integration: RTL plugin, nopeslide
+RTL plugin for Draw.io Integration
+
+Draw.io Integration: Mermaid pl, nopeslide
+Mermaid plugin for Draw.io Integration
+
+Draw.io Integration: WaveDrom, nopeslide
+WaveDrom plugin for Draw.io Integration
+
+vscode-pdf, tomoki1207
+Display pdf file in VSCode.
+Con el "LaTeX Graphics Helper", no previsualiza
+
+LaTeX Graphics Helper, naatin777
+Una extensión de VS Code para que los usuarios de LaTeX procesen archivos gráficos de manera eficiente.
+Proporciona funciones como recorte de PDF, conversión de formato de imagen,
+conversión de archivos Draw.io a PDF y generación de código LaTeX utilizando Gemini AI.
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Otras extensiones:
+
+Error Lens, usernamehw
+
+Material Icon Theme, PKief
+Iconos mas claros
+
+Peacock, John Papa
+Te permite cambiar el color de la ventana, así si tiene más de un proyecto abierto es más dificil equivocarse.
+
+Code Runner, formulahendry
+Permite ejecutar código directamente en el editor
+
+Open Remote - SSH, jeanp413
+
+Office Viewer, cweijan
+View word,excel files and using WYSIWYG editor for markdo
+
+Doxygen Documentation Generator, cschlosser
+Hacer plantillas para el comentario de inicio de los archivos.
+
+Git Graph, mhutchie
+Vea un gráfico Git de su repositorio y realice fácilmente acciones de Git desde el gráfico. ¡Configurable para lucir como quieras!
+
+GitHub Pull Requests, GitHub
+Esta extensión le permite revisar y administrar solicitudes de incorporación de cambios y problemas de GitHub en Visual Studio Code. La compatibilidad incluye:
+
+Autenticación y conexión de VS Code a GitHub y GitHub Enterprise.
+Enumerar y examinar PR desde VS Code.
+Revisión de solicitudes de incorporación de cambios desde VS Code con comentarios en el editor.
+Validación de PR desde VS Code con desprotecciones sencillas.
+Integración de terminal que permite que la interfaz de usuario y las CLI coexistan.
+Enumerar y examinar problemas desde VS Code.
+Pase el cursor sobre las tarjetas para los usuarios mencionados con "@" y para los problemas.
+Sugerencias de finalización para usuarios y problemas.
+Una acción "Comenzar a trabajar en el problema" que puede crear una rama para usted.
+Acciones de código para crear incidencias a partir de comentarios "todo".
+
+
+GitLens, GitKraken
+GitLens es una potente extensión de código abierto para Visual Studio Code creada y mantenida por GitKraken.
+
+Mejore sus flujos de trabajo con una potente funcionalidad de Git, como anotaciones de culpa en el editor, desplazamientos, CodeLens y mucho más, todo ello totalmente personalizable dentro de VS Code. Prueba los flujos de trabajo avanzados de GitLens Pro que aceleran las revisiones de relaciones públicas, proporcionan acciones de Git interactivas enriquecidas y mejoran la colaboración para ti y tu equipo.
+
+
+
+
+
+//         /////////\\\\\\\\
+//        //     arduino   \\
+//       ///////////\\\\\\\\\\
+
+Instalar antes Arduino IDE
+
+comprobar dependencias:
+sudo pacman -S platformio-core platformio-core-udev
+
+
+python3 -c "import venv; import ensurepip; print('Congrats! Python venv is already installed!')"
+Congrats! Python venv is already installed!
+
+sino para instalar:
+sudo apt-get install python3-venv
+o
+paru -S python-virtualenv
+
+para usar el monitor serial desde el mismo terminal
+sudo pacman -S screen minicom
+apt get screem mimicom
+
+
+pioarduino IDE, pioarduino
+
+
+Acabo de instalar pioarduinoen vscode, le he pedido, usando hilo code, a deepseek y a kimi, que me desarroyen un blink en arduino UNO,
+para verificar la instalación y su correcto funcionamiento.
+En ambos casos:
+1.- Me han creado el archivo /home/c2mismo/PROYECTOS/MPPT-XY7025/platformio.ini y /home/c2mismo/PROYECTOS/MPPT-XY7025/src/main.cpp
+2.- No me han creado un nuevo proyecto de platformio
+3.- han querido instalar en el sistema platformio, sin verificar antes si es neceserio o no, ni cuales paquetes hay en los repositorios oficiales o AUR.
+
+En ese momento les he detenido, para pedirte ayuda, ¿que soluciones hay y cuales crees mas eficientes, para poder trabajar en proyectos platformio, desde vscode con ayuda de kilo code?
+
+
+
+
+//         /////////\\\\\\\\
+//        //  intellisense \\
+//       ///////////\\\\\\\\\\
+
+
+Ayuda con auto reyenados etc con los lenguajes
+instalar para los lenguajes que uses C++, Python, etc..
+Prueba que ya el intellisense viene integrado
+
+
+Better Comment, Aaron Bond
+Puede resaltar comentarios con el color que quieras
+
+Bash IDE, Mads Hartmann
+Intelisense, para bash
+
+shellman, Remisa
+Intelisense muy completo, incluye ejemplos
+
+Path Intellisense, Christian Kohler
+Le hace el intellisense al path mientras escribes verás los nombres de archivos.
+
+linter
+complemento de intellisense mas enfocado a buscar errores o subsanar paradigmas
+NO INSTALADO DEBO MIRAR
+
+ShellCheck, Timon Wong
+Señala errores
+
+shell-format, foxundermoon
+formatea documetos, tab y tal de bash, gitignore y otros
+Shift+Ctrl+P > Format document
+
+Markdown Preview Enhanced, shd101wyy
+Markdown Preview Enhanced is an extension that provides you with many useful functionalities such as automatic scroll sync, math typesetting, mermaid, PlantUML, pandoc, PDF export, code chunk, presentation writer, etc.
+Markdown Preview mejorado es una extensión que le proporciona muchas funcionalidades útiles, como sincronización automática de desplazamiento, Markdown, math typesetting, mermaid, PlantUML, pandoc, PDF export, code chunk, escritor de presentación (Reaviljs), etc.
+
+Configuración:
+Automatically show preview of Markdown: OK
+Color Block Theme: Dracula
+Mermaid theme: Dark
+Preview color Scheme: editorColorScheme
+Preview Theme: github-dark.css
+Revealjs Theme: night.css
+
+
+
+
+
+
+
+//         /////////\\\\\\\\
+//        //      HTML     \\
+//       ///////////\\\\\\\\\\
+
+Complementos de Visual Studio Code
+para HTML.
+
+Live Server, Ritwick Dey
+Crea un servidor que mantiene refrescada la página.
+El localhost: 5555
+configurar:
+/.vscode/extensions/ritwickdey.liveserver-5.6.1/package.json
+"liveServer.settings.CustomBrowser": {
+					"default": "firefox:PrivateMode",
+}
+
+Htmltagwrap, Brad Gashler
+Al seleccionar texto, pulsa Alt+w
+Añade un tag nuevo.
+
+auto rename tag, Simon Siefke
+cuando modificas el tag cambia el endTag
+
+nodeJS instalar en el sistema
+y ejecuta java-script al pulsar ejecutar
+
+
+//         /////////\\\\\\\\
+//        //     python    \\
+//       ///////////\\\\\\\\\\
+
+
+antes de instalar el complemento Python (he cambiado la extensión no sé si hará falta)
+sudo apt install pylint
+Python Debugger, ms-python
+
+
+
+
+
+
+//         /////////\\\\\\\\
+//        //       IA      \\
+//       ///////////\\\\\\\\\\
+
+
+
+
+
+
+CodeGPT: Chat & AI - Agents from: Code GPT codegpt.co
+
+En CodeGPT, al lado de la casita (home) VSCode y verificamos:
+¿Que modelo eres?
+Seleccionas -> Local LLMs
+Select local provider -> LM Studio
+
+En LM Studio:
+Pulsamos a la izquierda Developer
+Status (Start server) ON
+Copiamos la IP del servidor local
+
+Nos vamos a VSCode y verificamos:
+¿Que modelo eres?
+
+
+
+Gemini Code Assist from: Google
+Gratis
+
+F1 > Open User settings (JSON)
+Añadir:
+,
+    "geminicodeassist.updateChannel": "Insiders"
+
+con esto se activa el modo agente
+
+*** Muy muy lento, desesperante ***
+
+
+
+
+Kilo Code AI Agent (Roo / Cline fork) from: kilocode
+
+cuesta dinero, pero si usas deepseek es muy poco
+Hacer token en su página
+https://kilocode.ai/
+
+Configuración > Proveedores > Añadir nuevo perfil > Proveedor API:
+kilo code
+Añadir clave API (token)
+
+Con API:
+Kilo Code
+modelo:
+deepseek/deepseek-v3.1-terminus
+
+con API:
+OpenRouter
+Tiene modelos gratuitos
+
+
+
+
+Creando unos modos de interacción para KILO Code:
+"os-debug-architect"
+"os-debug-testing"
+en el proyecto ArchLinuxSoluciones:
+nano /home/c2mismo/PROYECTOS/ArchLinuxSoluciones/.kilocodemodes
+
+Ver en:
+Modos IA para solventar problemas en SO.txt
+
+
+
+
+
+
+
+
+
+//         /////////\\\\\\\\
+//        //      notas    \\ 	OBSOLETE
+//       ///////////\\\\\\\\\\
+
+Para las librerías me acaban dando error,
+las puedes descargar con el Platformio,
+pero no hagas lo siguiente en platformio.ini:
+
+lib_deps = SPI
+
+Puedes limitar las versiones a mi me gusta limitar las versiones completas y
+permitio solo los parches la catualizacion de parches, si funciona
+mejor no cambiar hasta estar preparado para hacer tests.
+Se puden poner una lista siempre y cuando dejes dos espacios delante:
+lib_deps =
+  SPI
+  arduino-libraries/SD @ ~1.2.4
+
+
+HAZLO EN CARPETA_PROYECTO/.vscode/c_cpp_properties.json
+añade la línea:
+
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/home/c2mismo/.platformio/packages/framework-arduino-avr/**"
+            ],
+
+De esta forma al reinstalar me he encontrado con menos conflictos.
+En verdad, identifica la cabecera Arduino.h pero no la pgmspace.h,
+de la que depende la de Arduino.h.
+
+                "/home/c2mismo/.platformio/packages/toolchain-atmelavr/avr/include/avr/**",
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////
+
+
+Ctrl+Shift+P > Setting.json
+
+Crea un archivo vacio al iniciar el programa en blanco
+    "workbench.startupEditor": "newUntitledFile",
+Detectar el lenguaje usado automáticamente
+    "workbench.editor.languageDetection": true,
+Colorea los tabulados
+    "editor.guides.bracketPairs": true,
+Colorea los parentesis corchetes, etc..
+    "editor.bracketPairColorization.enabled": true,
+Cambiar de posición la barra lateral, por defct "left"
+    "workbench.sideBar.location": "right",
+
+

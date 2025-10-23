@@ -1,0 +1,13 @@
+prieros pasos con codium abrir y abrir note visual in docu
+parado install arduino por error linea 173
+
+instalando vscodium para verifican dependencia Python venv en archlinux ejecuto : 
+python3 -c "import venv; import ensurepip; print('Congrats! Python venv is already installed!')"
+Congrats! Python venv is already installed!
+ y no me devuelde error
+ he instalado: 
+ sudo apt-get install python3-venv
+y continua dando error: 
+$ python3 -c "import venv; import ensurepip; print('Congrats! Python venv is already installed!')"
+bash: !': event not found
+
