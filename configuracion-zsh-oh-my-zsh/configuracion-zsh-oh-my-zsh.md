@@ -1,10 +1,10 @@
 ## Configuración de Zsh y Oh-My-Zsh en Usuario Actual
 
-**Descripción:** El usuario tiene zsh y oh-my-zsh instalado y configurado en otro usuario, pero no en el actual. Se necesita configurar en este usuario para mejorar la experiencia de shell con características como autocompletado, temas y plugins. [Creado por os-debug-architect]
+**Descripción:** El usuario tiene zsh y oh-my-zsh instalado y configurado en otro usuario, pero no en el actual. Se necesita configurar en este usuario para mejorar la experiencia de shell con características como autocompletado, temas y plugins. Ahora se enfoca en la personalización adicional, como agregar plugins y cambiar temas. [Creado por os-debug-architect]
 
 ## Solución
 
-**Estado:** RESUELTO
+**Estado:** RESUELTO (Personalización completada; cambio de shell por defecto pendiente de autenticación manual)
 
 **Proceso de implementación realizado por el modo OS Testing:**
 
@@ -14,11 +14,17 @@
 
 3. **Cambio de shell por defecto:** Se intentó cambiar el shell a zsh usando `chsh -s $(which zsh)`, pero falló por autenticación PAM. Se recomienda al usuario ejecutar este comando manualmente con su contraseña para completar el cambio. Una vez hecho, reiniciar la sesión para aplicar.
 
-4. **Configuración de Oh-My-Zsh:** El archivo ~/.zshrc se configuró automáticamente con configuraciones básicas. No se agregaron plugins adicionales ya que no se especificaron, pero se puede personalizar editando ~/.zshrc (ej: agregar plugins como docker o cambiar el tema).
+4. **Configuración de Oh-My-Zsh:** El archivo ~/.zshrc se configuró automáticamente con configuraciones básicas.
 
-5. **Verificación:** Se probó ejecutar zsh y se confirmó que funciona correctamente. El usuario puede verificar ejecutando `exec zsh` en la terminal para probar Oh-My-Zsh.
+5. **Personalización de plugins y temas (Implementado en OS Testing):**
+   - Se instaló el plugin zsh-autosuggestions clonando el repositorio en ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions.
+   - Se editó ~/.zshrc para cambiar el tema a "agnoster" y agregar plugins: plugins=(git docker zsh-autosuggestions).
 
-**Notas finales:** La configuración básica está completa. Para usar zsh como shell por defecto, el usuario debe completar el paso 3 manualmente. No se identificaron riesgos adicionales, ya que todos los pasos se basan en procedimientos oficiales.
+6. **Cambio de shell por defecto:** Se intentó con `chsh -s $(which zsh)`, pero falló por autenticación PAM. El usuario debe ejecutar este comando manualmente con su contraseña para completar el cambio.
+
+7. **Verificación:** Se probó ejecutando `exec zsh` y se confirmó que funciona correctamente. El shell actual ya es zsh (`echo $SHELL` muestra /usr/bin/zsh). Las personalizaciones (tema agnoster y plugins git, docker, zsh-autosuggestions) se aplican al recargar.
+
+**Notas finales:** La personalización está completa. El cambio de shell por defecto con `chsh` requiere autenticación manual del usuario. No se identificaron riesgos adicionales, ya que todos los pasos se basan en procedimientos oficiales de Oh-My-Zsh y `man zsh`.
 
 ## Plan de Solución
 
@@ -39,12 +45,18 @@ Basado en la documentación oficial de Ubuntu/Debian y las páginas de manual (`
    - Editar ~/.zshrc para personalizar plugins (ej: git, docker) y temas (ej: robbyrussell).
    - Opcional: Instalar plugins adicionales como zsh-autosuggestions o zsh-syntax-highlighting via git clone en ~/.oh-my-zsh/custom/plugins/.
 
-5. **Verificar y probar:**
+5. **Personalizar plugins y temas:**
+   - Editar ~/.zshrc para agregar plugins útiles: Abrir el archivo con un editor (ej: `nano ~/.zshrc`) y modificar la línea `plugins=(git)` para incluir más, como `plugins=(git docker zsh-autosuggestions)`. Guardar y recargar con `source ~/.zshrc`.
+   - Cambiar el tema: En ~/.zshrc, modificar `ZSH_THEME="robbyrussell"` a otro tema disponible (ej: "agnoster"). Lista de temas en ~/.oh-my-zsh/themes/.
+   - Instalar plugins adicionales: Para plugins no incluidos por defecto, clonarlos en ~/.oh-my-zsh/custom/plugins/ (ej: `git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions`) y agregarlo a la lista de plugins en ~/.zshrc.
+
+6. **Verificar y probar:**
    - Reiniciar la terminal y verificar que zsh se carga correctamente con `echo $SHELL`.
    - Probar funcionalidades como autocompletado y temas.
 
 **Notas adicionales:**
-- Todos los pasos se basan en prácticas estándar de Ubuntu/Debian y no involucran procedimientos no documentados.
+- Todos los pasos se basan en prácticas estándar de Ubuntu/Debian y no involucran procedimientos no documentados. La personalización se basa en la documentación oficial de Oh-My-Zsh (https://ohmyz.sh/) y `man zsh`.
+- Asegúrate de completar el cambio de shell por defecto con `chsh -s $(which zsh)` para aplicar zsh como shell principal.
 - El modo OS Testing implementará estos pasos en el sistema real.
 - Si surgen problemas, consultar `man zsh` o la documentación de Oh-My-Zsh para troubleshooting.
 
