@@ -23,3 +23,4 @@ mount: (hint) your fstab has been modified, but systemd still uses
 toni@UBook:~$ 
 
 
+# en la viki de arch hay ese ejemplo # setpci -s 00:02.0 F4.B=0 desglosamelo y explicamelo
