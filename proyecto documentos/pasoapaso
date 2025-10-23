@@ -11,3 +11,15 @@ y continua dando error:
 $ python3 -c "import venv; import ensurepip; print('Congrats! Python venv is already installed!')"
 bash: !': event not found
 
+
+
+
+ultimo error:
+sudo mount -a
+mount: /mnt/proyects: tipo de sistema de ficheros incorrecto, opción incorrecta, superbloque incorrecto en /dev/sda4, falta la página de códigos o el programa auxiliar, o algún otro error.
+       dmesg(1) may have more information after failed mount system call.
+mount: (hint) your fstab has been modified, but systemd still uses
+       the old version; use 'systemctl daemon-reload' to reload.
+toni@UBook:~$ 
+
+
